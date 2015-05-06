@@ -7,7 +7,7 @@ document.addEventListener("deviceready",function(){
 	});//tap a btnvibrar
 	$('#btnbeep').on('tap',
 	function(){
-		navigator.notification.beep (1);
+		navigator.beep (1);
 	});//tap a btnbeep
 	$('#izquierda').on('swipeleft',
 	function(){
