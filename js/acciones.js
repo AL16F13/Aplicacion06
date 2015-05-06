@@ -7,7 +7,7 @@ document.addEventListener("deviceready",function(){
 	});//tap a btnvibrar
 	$('#btnbeep').on('tap',
 	function(){
-		navigator.beep (1);
+		navigator.notification.beep (1);
 	});//tap a btnbeep
 	$('#izquierda').on('swipeleft',
 	function(){
@@ -16,6 +16,15 @@ document.addEventListener("deviceready",function(){
 	$('#derecha').on('swiperight',
 	function(){
 		alert("Barrio a la izquierda"); 
+	});
+	document.addEventListener("pause",function(){
+		$('#listado').append( "<p> la aplicacion se pausó </p>");
+	});
+	document.addEventListener("resume",function(){
+		$('#listado').append( "<p> se reinicio la aplicacion </p>");
+	});
+	$(window).on('orientationchange',function(e){
+	 $('#listado').append("<p> Orientacion: " + e.orientation + " </p>")
 	});
 }); 
 });
